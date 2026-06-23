@@ -29,30 +29,48 @@
         .card {
             max-width: 880px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 50px;
-            padding: 45px 40px;
+            padding: 0 40px 45px 40px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.08);
             text-align: center;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
         .card:hover {
             transform: scale(1.005);
         }
 
-        /* ===== الشعار / الصورة ===== */
+        /* ===== صورة الغلاف (خلف اللوجو) ===== */
+        .profile-cover {
+            width: 100%;
+            height: 180px;
+            background: url('cover.png') center/cover no-repeat;
+            border-radius: 50px 50px 0 0;
+            margin-top: 0;
+            margin-bottom: -65px; /* يسحب اللوجو للأعلى ليتراكب فوق الغلاف */
+            box-shadow: inset 0 -30px 60px rgba(0, 0, 0, 0.6);
+            border-bottom: 3px solid rgba(212, 175, 55, 0.25);
+            position: relative;
+            z-index: 0;
+        }
+
+        /* ===== اللوجو (يطفو فوق الغلاف) ===== */
         .logo-wrapper {
             width: 130px;
             height: 130px;
             border-radius: 50%;
             background: linear-gradient(135deg, #d4af37, #b8942a);
-            padding: 4px;
+            padding: 5px;
             margin: 0 auto 18px;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.35), 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            border: 3px solid #0b1420;
         }
 
         .logo-wrapper img {
@@ -60,7 +78,6 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #0b1420;
             background: #1a2634;
             display: block;
         }
@@ -75,6 +92,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 2px;
+            margin-top: -5px;
         }
 
         .subtitle {
@@ -89,12 +107,12 @@
             margin-left: 8px;
         }
 
-        /* ===== Bio المستوحى من cover.png (مع عبارات الاستوديو والرد الآلي) ===== */
+        /* ===== Bio مع عبارات الكوفر ===== */
         .bio-text {
             font-size: 1rem;
             line-height: 2;
             color: #cbd8e3;
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.04);
             padding: 16px 24px;
             border-radius: 60px;
             border: 1px solid rgba(212, 175, 55, 0.08);
@@ -107,7 +125,6 @@
             font-weight: 600;
         }
 
-        /* كبسولات الكوفر (الرد الآلي، تسجيل في استوديو) */
         .bio-text .tag {
             display: inline-block;
             background: rgba(212, 175, 55, 0.12);
@@ -124,7 +141,6 @@
             margin-left: 6px;
         }
 
-        /* زر "أطلب الآن" داخل النص */
         .call-to-action-text {
             display: inline-block;
             margin-top: 8px;
@@ -137,6 +153,7 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             transition: 0.3s;
         }
+
         .call-to-action-text:hover {
             transform: scale(1.05);
             background: #e0c04a;
@@ -146,7 +163,7 @@
             text-decoration: none;
         }
 
-        /* ===== حاوية الفيديو (رابط يوتيوب المطلوب) ===== */
+        /* ===== حاوية الفيديو ===== */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -215,7 +232,6 @@
             box-shadow: 0 2px 0 #8f7522;
         }
 
-        /* زر مميز (للطلب الآن) */
         .btn-primary {
             background: #1e3b57;
             color: #d4af37;
@@ -231,7 +247,7 @@
             box-shadow: 0 7px 0 #0f1f2f, 0 14px 30px rgba(30, 59, 87, 0.5);
         }
 
-        /* ===== أيقونات التواصل الاجتماعي (جميع الروابط المطلوبة) ===== */
+        /* ===== أيقونات التواصل ===== */
         .social-row {
             display: flex;
             justify-content: center;
@@ -279,11 +295,20 @@
             margin: 0 4px;
         }
 
-        /* ===== استجابة للجوال (متوافق مع الشاشات) ===== */
+        /* ===== استجابة للجوال ===== */
         @media (max-width: 540px) {
             .card {
-                padding: 28px 16px;
+                padding: 0 16px 30px 16px;
                 border-radius: 36px;
+            }
+            .profile-cover {
+                height: 130px;
+                border-radius: 36px 36px 0 0;
+                margin-bottom: -55px;
+            }
+            .logo-wrapper {
+                width: 100px;
+                height: 100px;
             }
             h1 {
                 font-size: 2rem;
@@ -305,16 +330,21 @@
                 height: 48px;
                 font-size: 1.3rem;
             }
-            .bio-text .tag {
-                font-size: 0.8rem;
-                padding: 3px 12px;
-            }
         }
 
         @media (max-width: 400px) {
             .card {
-                padding: 20px 12px;
+                padding: 0 12px 20px 12px;
                 border-radius: 28px;
+            }
+            .profile-cover {
+                height: 100px;
+                border-radius: 28px 28px 0 0;
+                margin-bottom: -45px;
+            }
+            .logo-wrapper {
+                width: 80px;
+                height: 80px;
             }
             h1 {
                 font-size: 1.6rem;
@@ -331,28 +361,28 @@
 
     <div class="card">
 
-        <!-- الشعار / الصورة الشخصية -->
-      <div class="logo-wrapper">
-    <img src="https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/Cb8zmbwaRh8UJgtbBY8cBW.jpg"
-         alt="شعار Bilel Bouaffar" />
-</div>
+        <!-- ===== صورة الغلاف (خلف اللوجو) ===== -->
+        <!-- ضع ملف cover.png في نفس مجلد index.html -->
+        <div class="profile-cover"></div>
 
-        <!-- الاسم الكامل كما طلبت -->
+        <!-- ===== اللوجو (يطفو فوق الغلاف) ===== -->
+        <div class="logo-wrapper">
+            <img src="https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/Cb8zmbwaRh8UJgtbBY8cBW.jpg"
+                 alt="شعار Bilel Bouaffar" />
+        </div>
+
+        <!-- ===== الاسم والمعلومات ===== -->
         <h1>Bilel Bouaffar</h1>
         <p class="subtitle"><i class="fas fa-microphone"></i> Bilal Voice Over | تعليق صوتي احترافي</p>
 
-        <!-- ===== السيرة الذاتية المستوحاة من cover.png ===== -->
+        <!-- ===== السيرة الذاتية (نفس عبارات الكوفر) ===== -->
         <div class="bio-text">
             <span class="highlight">✦</span> تسجيل في استوديو احترافي <span class="highlight">✦</span><br />
-            
-            <!-- عبارة "الرد الآلي على المكالمات" كما في الكوفر -->
             <span class="tag"><i class="fas fa-phone-volume"></i> الرد الآلي على المكالمات</span>
             <span class="tag"><i class="fas fa-headphones"></i> تعليق صوتي</span>
             <span class="tag"><i class="fas fa-video"></i> إعلانات</span>
             <span class="tag"><i class="fas fa-book"></i> كتب صوتية</span>
             <br /><br />
-            
-            <!-- عبارة "أطلب الآن" مع رابط مباشر (درايف) -->
             <span class="call-to-action-text">
                 <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank">
                     <i class="fas fa-arrow-left"></i> أطلب الآن <i class="fas fa-arrow-left"></i>
@@ -360,7 +390,7 @@
             </span>
         </div>
 
-        <!-- ===== فيديو يوتيوب (الرابط: https://www.youtube.com/watch?v=yMzaws-oelE) ===== -->
+        <!-- ===== فيديو يوتيوب ===== -->
         <div class="video-wrapper">
             <iframe 
                 src="https://www.youtube.com/embed/yMzaws-oelE?autoplay=0&rel=0&modestbranding=1" 
@@ -370,37 +400,30 @@
             </iframe>
         </div>
 
-        <!-- ===== أزرار التنقل (جميعها تحتوي على الروابط المطلوبة) ===== -->
+        <!-- ===== أزرار التنقل ===== -->
         <div class="nav-buttons">
-            <!-- زر "أطلب الآن" → رابط الأعمال على درايف -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn btn-primary">
                 <i class="fas fa-headset"></i> أطلب الآن
             </a>
-            <!-- زر "أعمالي" → رابط الأعمال على درايف -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn">
                 <i class="fas fa-briefcase"></i> أعمالي
             </a>
-            <!-- زر "تواصل" → ينزل لقسم السوشيال ميديا -->
             <a href="#social-section" class="btn">
                 <i class="fas fa-paper-plane"></i> تواصل
             </a>
         </div>
 
-        <!-- ===== روابط التواصل الاجتماعي (جميع المنصات المطلوبة) ===== -->
+        <!-- ===== روابط التواصل الاجتماعي ===== -->
         <div id="social-section" class="social-row">
-            <!-- قناة يوتيوب: youtube.com/@bilalbouaffar92 -->
             <a href="https://www.youtube.com/@bilalbouaffar92" target="_blank" class="social-link" title="يوتيوب">
                 <i class="fab fa-youtube"></i>
             </a>
-            <!-- تيك توك: https://www.tiktok.com/@bilalvoiceover -->
             <a href="https://www.tiktok.com/@bilalvoiceover" target="_blank" class="social-link" title="تيك توك">
                 <i class="fab fa-tiktok"></i>
             </a>
-            <!-- إنستغرام: https://www.instagram.com/bilal_voiceover -->
             <a href="https://www.instagram.com/bilal_voiceover" target="_blank" class="social-link" title="إنستغرام">
                 <i class="fab fa-instagram"></i>
             </a>
-            <!-- أعمالي (درايف): https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8 -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="social-link" title="أعمالي">
                 <i class="fas fa-folder-open"></i>
             </a>
