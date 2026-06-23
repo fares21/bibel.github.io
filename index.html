@@ -40,16 +40,16 @@
         /* ===== صورة الغلاف في الأعلى (بانر كبير) ===== */
         .profile-cover {
             width: 100%;
-            height: 320px; /* ارتفاع مناسب للبانر */
+            height: 320px;
             background: url('https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/pjYwsdNr2AJpxL75cqcbbU.png') center/cover no-repeat;
             border-radius: 50px 50px 0 0;
             margin-top: 0;
-            margin-bottom: -95px; /* لسحب اللوجو للأعلى ليتراكب على الغلاف */
+            margin-bottom: -95px;
             box-shadow: inset 0 -60px 80px rgba(0, 0, 0, 0.7);
             border-bottom: 3px solid rgba(212, 175, 55, 0.25);
             position: relative;
             z-index: 0;
-            background-color: #0b1420; /* لون احتياطي */
+            background-color: #0b1420;
         }
 
         /* ===== اللوجو الدائري (يطفو فوق الغلاف) ===== */
@@ -118,6 +118,7 @@
         }
         .bio-text .tag i { color: #d4af37; margin-left: 6px; }
 
+        /* زر "أطلب الآن" داخل الـ Bio */
         .call-to-action-text {
             display: inline-block;
             margin-top: 8px;
@@ -130,8 +131,17 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             transition: 0.3s;
         }
-        .call-to-action-text:hover { transform: scale(1.05); background: #e0c04a; }
-        .call-to-action-text a { color: #0b1420; text-decoration: none; }
+        .call-to-action-text:hover { 
+            transform: scale(1.05); 
+            background: #e0c04a; 
+        }
+        .call-to-action-text a { 
+            color: #0b1420; 
+            text-decoration: none; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
         .video-wrapper {
             position: relative;
@@ -182,6 +192,7 @@
         .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 0 #8f7522, 0 14px 30px rgba(212, 175, 55, 0.25); background: #e0c04a; }
         .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #8f7522; }
 
+        /* زر "أطلب الآن" المميز باللون الأزرق */
         .btn-primary {
             background: #1e3b57;
             color: #d4af37;
@@ -270,10 +281,11 @@
             <span class="tag"><i class="fas fa-video"></i> إعلانات</span>
             <span class="tag"><i class="fas fa-book"></i> كتب صوتية</span>
             <br /><br />
+            <!-- زر "أطلب الآن" داخل الـ Bio → يقود إلى contact.html -->
             <span class="call-to-action-text">
-                <a href="contact.html" class="btn">
-                <i class="fas fa-paper-plane"></i> أطلب الآن
-            </a>
+                <a href="contact.html">
+                    <i class="fas fa-arrow-left"></i> أطلب الآن <i class="fas fa-arrow-left"></i>
+                </a>
             </span>
         </div>
 
@@ -284,12 +296,15 @@
         </div>
 
         <div class="nav-buttons">
-            <a href="https://fares21.github.io/bibel.github.io/contact.html" target="_blank" class="btn btn-primary">
+            <!-- زر "أطلب الآن" الأول → يقود إلى contact.html -->
+            <a href="contact.html" class="btn btn-primary">
                 <i class="fas fa-headset"></i> أطلب الآن
             </a>
+            <!-- زر "أعمالي" → درايف -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn">
                 <i class="fas fa-briefcase"></i> أعمالي
             </a>
+            <!-- زر "تواصل" → contact.html -->
             <a href="contact.html" class="btn">
                 <i class="fas fa-paper-plane"></i> تواصل
             </a>
