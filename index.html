@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bilel Bouaffar | Bilal Voice Over</title>
-    <!-- Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* ===== إعدادات عامة ===== */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +23,6 @@
             color: #e8edf2;
         }
 
-        /* ===== البطاقة الرئيسية ===== */
         .card {
             max-width: 880px;
             width: 100%;
@@ -37,40 +34,36 @@
             padding: 0 40px 45px 40px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(212, 175, 55, 0.08);
             text-align: center;
-            transition: transform 0.3s ease;
             overflow: hidden;
         }
 
-        .card:hover {
-            transform: scale(1.005);
-        }
-
-        /* ===== صورة الغلاف (خلف اللوجو) ===== */
+        /* ===== صورة الغلاف الكبيرة (320px) ===== */
         .profile-cover {
             width: 100%;
-            height: 180px;
-            background: url('cover.png') center/cover no-repeat;
+            height: 320px;
+            background: url('https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/pjYwsdNr2AJpxL75cqcbbU.png') center/cover no-repeat;
             border-radius: 50px 50px 0 0;
             margin-top: 0;
-            margin-bottom: -65px; /* يسحب اللوجو للأعلى ليتراكب فوق الغلاف */
-            box-shadow: inset 0 -30px 60px rgba(0, 0, 0, 0.6);
+            margin-bottom: -95px;
+            box-shadow: inset 0 -50px 80px rgba(0, 0, 0, 0.7);
             border-bottom: 3px solid rgba(212, 175, 55, 0.25);
             position: relative;
             z-index: 0;
+            background-color: #0b1420;
         }
 
-        /* ===== اللوجو (يطفو فوق الغلاف) ===== */
+        /* ===== اللوجو ===== */
         .logo-wrapper {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             background: linear-gradient(135deg, #d4af37, #b8942a);
             padding: 5px;
             margin: 0 auto 18px;
-            box-shadow: 0 0 50px rgba(212, 175, 55, 0.35), 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.4), 0 10px 30px rgba(0, 0, 0, 0.6);
             position: relative;
             z-index: 1;
-            border: 3px solid #0b1420;
+            border: 4px solid #0b1420;
         }
 
         .logo-wrapper img {
@@ -82,11 +75,9 @@
             display: block;
         }
 
-        /* ===== النصوص ===== */
         h1 {
             font-size: 2.6rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
             background: linear-gradient(to left, #ffffff, #d4af37);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -101,13 +92,8 @@
             margin-bottom: 4px;
             letter-spacing: 0.8px;
         }
+        .subtitle i { color: #d4af37; margin-left: 8px; }
 
-        .subtitle i {
-            color: #d4af37;
-            margin-left: 8px;
-        }
-
-        /* ===== Bio مع عبارات الكوفر ===== */
         .bio-text {
             font-size: 1rem;
             line-height: 2;
@@ -119,12 +105,7 @@
             margin: 16px 0 24px;
             backdrop-filter: blur(4px);
         }
-
-        .bio-text .highlight {
-            color: #d4af37;
-            font-weight: 600;
-        }
-
+        .bio-text .highlight { color: #d4af37; font-weight: 600; }
         .bio-text .tag {
             display: inline-block;
             background: rgba(212, 175, 55, 0.12);
@@ -135,11 +116,7 @@
             border: 1px solid rgba(212, 175, 55, 0.2);
             font-weight: 500;
         }
-
-        .bio-text .tag i {
-            color: #d4af37;
-            margin-left: 6px;
-        }
+        .bio-text .tag i { color: #d4af37; margin-left: 6px; }
 
         .call-to-action-text {
             display: inline-block;
@@ -153,17 +130,9 @@
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
             transition: 0.3s;
         }
+        .call-to-action-text:hover { transform: scale(1.05); background: #e0c04a; }
+        .call-to-action-text a { color: #0b1420; text-decoration: none; }
 
-        .call-to-action-text:hover {
-            transform: scale(1.05);
-            background: #e0c04a;
-        }
-        .call-to-action-text a {
-            color: #0b1420;
-            text-decoration: none;
-        }
-
-        /* ===== حاوية الفيديو ===== */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -171,11 +140,9 @@
             margin: 10px auto 28px;
             border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
-            background: #0a141e;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
             aspect-ratio: 16 / 9;
         }
-
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -183,10 +150,8 @@
             width: 100%;
             height: 100%;
             border: none;
-            display: block;
         }
 
-        /* ===== أزرار التنقل ===== */
         .nav-buttons {
             display: flex;
             flex-wrap: wrap;
@@ -194,7 +159,6 @@
             justify-content: center;
             margin: 8px 0 28px;
         }
-
         .btn {
             display: inline-flex;
             align-items: center;
@@ -210,44 +174,22 @@
             transition: 0.25s ease;
             text-decoration: none;
             box-shadow: 0 5px 0 #8f7522, 0 8px 20px rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.3px;
             flex: 1 1 auto;
             min-width: 130px;
             justify-content: center;
         }
-
-        .btn i {
-            font-size: 1.1rem;
-            color: #0b1420;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 7px 0 #8f7522, 0 14px 30px rgba(212, 175, 55, 0.25);
-            background: #e0c04a;
-        }
-
-        .btn:active {
-            transform: translateY(4px);
-            box-shadow: 0 2px 0 #8f7522;
-        }
+        .btn i { font-size: 1.1rem; color: #0b1420; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 7px 0 #8f7522, 0 14px 30px rgba(212, 175, 55, 0.25); background: #e0c04a; }
+        .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #8f7522; }
 
         .btn-primary {
             background: #1e3b57;
             color: #d4af37;
             box-shadow: 0 5px 0 #0f1f2f, 0 8px 20px rgba(0, 0, 0, 0.4);
         }
+        .btn-primary i { color: #d4af37; }
+        .btn-primary:hover { background: #2a4f6e; }
 
-        .btn-primary i {
-            color: #d4af37;
-        }
-
-        .btn-primary:hover {
-            background: #2a4f6e;
-            box-shadow: 0 7px 0 #0f1f2f, 0 14px 30px rgba(30, 59, 87, 0.5);
-        }
-
-        /* ===== أيقونات التواصل ===== */
         .social-row {
             display: flex;
             justify-content: center;
@@ -255,7 +197,6 @@
             flex-wrap: wrap;
             margin-top: 6px;
         }
-
         .social-link {
             display: inline-flex;
             align-items: center;
@@ -271,7 +212,6 @@
             text-decoration: none;
             backdrop-filter: blur(4px);
         }
-
         .social-link:hover {
             background: #d4af37;
             color: #0b1420;
@@ -280,7 +220,6 @@
             box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
         }
 
-        /* ===== تذييل ===== */
         .footer-note {
             margin-top: 32px;
             font-size: 0.8rem;
@@ -289,95 +228,40 @@
             padding-top: 20px;
             letter-spacing: 0.5px;
         }
-
-        .footer-note i {
-            color: #d4af37;
-            margin: 0 4px;
-        }
+        .footer-note i { color: #d4af37; margin: 0 4px; }
 
         /* ===== استجابة للجوال ===== */
         @media (max-width: 540px) {
-            .card {
-                padding: 0 16px 30px 16px;
-                border-radius: 36px;
-            }
-            .profile-cover {
-                height: 130px;
-                border-radius: 36px 36px 0 0;
-                margin-bottom: -55px;
-            }
-            .logo-wrapper {
-                width: 100px;
-                height: 100px;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .btn {
-                padding: 12px 18px;
-                font-size: 0.85rem;
-                min-width: 100px;
-            }
-            .bio-text {
-                font-size: 0.88rem;
-                padding: 14px 16px;
-            }
-            .video-wrapper {
-                border-radius: 20px;
-            }
-            .social-link {
-                width: 48px;
-                height: 48px;
-                font-size: 1.3rem;
-            }
+            .card { padding: 0 16px 30px 16px; border-radius: 36px; }
+            .profile-cover { height: 200px; border-radius: 36px 36px 0 0; margin-bottom: -70px; }
+            .logo-wrapper { width: 110px; height: 110px; }
+            h1 { font-size: 2rem; }
+            .btn { padding: 12px 18px; font-size: 0.85rem; min-width: 100px; }
+            .bio-text { font-size: 0.88rem; padding: 14px 16px; }
+            .social-link { width: 48px; height: 48px; font-size: 1.3rem; }
         }
 
         @media (max-width: 400px) {
-            .card {
-                padding: 0 12px 20px 12px;
-                border-radius: 28px;
-            }
-            .profile-cover {
-                height: 100px;
-                border-radius: 28px 28px 0 0;
-                margin-bottom: -45px;
-            }
-            .logo-wrapper {
-                width: 80px;
-                height: 80px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            .btn {
-                padding: 10px 12px;
-                font-size: 0.78rem;
-                min-width: 80px;
-            }
+            .card { padding: 0 12px 20px 12px; border-radius: 28px; }
+            .profile-cover { height: 150px; border-radius: 28px 28px 0 0; margin-bottom: -55px; }
+            .logo-wrapper { width: 85px; height: 85px; }
+            h1 { font-size: 1.6rem; }
+            .btn { padding: 10px 12px; font-size: 0.78rem; min-width: 80px; }
         }
     </style>
 </head>
 <body>
-
     <div class="card">
+        <!-- ===== صورة الغلاف ===== -->
+        <div class="profile-cover"></div>
 
-        <!-- ===== صورة الغلاف (خلف اللوجو) ===== -->
-        <!-- ضع ملف cover.png في نفس مجلد index.html -->
-        <div class="profile-cover">
-            <img src="https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/pjYwsdNr2AJpxL75cqcbbU.png"/>
-        </div>
-
-        <!-- ===== اللوجو (يطفو فوق الغلاف) ===== -->
         <div class="logo-wrapper">
-            <img src="https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/Cb8zmbwaRh8UJgtbBY8cBW.jpg"
-                 alt="شعار Bilel Bouaffar" />
+            <img src="https://media.bio.site/sites/d327f9ec-77d8-495b-862a-94dd99296cd3/Cb8zmbwaRh8UJgtbBY8cBW.jpg" alt="شعار Bilel Bouaffar" />
         </div>
 
-        <!-- ===== الاسم والمعلومات ===== -->
         <h1>Bilel Bouaffar</h1>
         <p class="subtitle"><i class="fas fa-microphone"></i> Bilal Voice Over | تعليق صوتي احترافي</p>
 
-        <!-- ===== السيرة الذاتية (نفس عبارات الكوفر) ===== -->
         <div class="bio-text">
             <span class="highlight">✦</span> تسجيل في استوديو احترافي <span class="highlight">✦</span><br />
             <span class="tag"><i class="fas fa-phone-volume"></i> الرد الآلي على المكالمات</span>
@@ -392,17 +276,12 @@
             </span>
         </div>
 
-        <!-- ===== فيديو يوتيوب ===== -->
         <div class="video-wrapper">
-            <iframe 
-                src="https://www.youtube.com/embed/yMzaws-oelE?autoplay=0&rel=0&modestbranding=1" 
-                title="فيديو تعريفي - Bilel Bouaffar"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
+            <iframe src="https://www.youtube.com/embed/yMzaws-oelE?autoplay=0&rel=0&modestbranding=1" 
+                    title="فيديو تعريفي" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
             </iframe>
         </div>
 
-        <!-- ===== أزرار التنقل ===== -->
         <div class="nav-buttons">
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn btn-primary">
                 <i class="fas fa-headset"></i> أطلب الآن
@@ -411,32 +290,20 @@
                 <i class="fas fa-briefcase"></i> أعمالي
             </a>
             <a href="contact.html" class="btn">
-               <i class="fas fa-paper-plane"></i> تواصل
+                <i class="fas fa-paper-plane"></i> تواصل
             </a>
         </div>
 
-        <!-- ===== روابط التواصل الاجتماعي ===== -->
-        <div id="social-section" class="social-row">
-            <a href="https://www.youtube.com/@bilalbouaffar92" target="_blank" class="social-link" title="يوتيوب">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.tiktok.com/@bilalvoiceover" target="_blank" class="social-link" title="تيك توك">
-                <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/bilal_voiceover" target="_blank" class="social-link" title="إنستغرام">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="social-link" title="أعمالي">
-                <i class="fas fa-folder-open"></i>
-            </a>
+        <div class="social-row">
+            <a href="https://www.youtube.com/@bilalbouaffar92" target="_blank" class="social-link" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@bilalvoiceover" target="_blank" class="social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/bilal_voiceover" target="_blank" class="social-link" title="إنستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="social-link" title="أعمالي"><i class="fas fa-folder-open"></i></a>
         </div>
 
-        <!-- تذييل -->
         <div class="footer-note">
             <i class="fas fa-microphone-alt"></i> تسجيل احترافي — تعليق صوتي — إنتاج إعلانات <i class="fas fa-headphones"></i>
         </div>
-
     </div>
-
 </body>
 </html>
