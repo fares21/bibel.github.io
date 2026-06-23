@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bilal Voice Over | تعليق صوتي احترافي</title>
+    <title>Bilel Bouaffar | Bilal Voice Over</title>
     <!-- Font Awesome للأيقونات -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
@@ -44,7 +44,7 @@
             transform: scale(1.005);
         }
 
-        /* ===== الصورة الشخصية / الشعار ===== */
+        /* ===== الشعار / الصورة ===== */
         .logo-wrapper {
             width: 130px;
             height: 130px;
@@ -89,10 +89,10 @@
             margin-left: 8px;
         }
 
-        /* ===== Bio المستوحى من cover.png ===== */
+        /* ===== Bio المستوحى من cover.png (مع عبارات الاستوديو والرد الآلي) ===== */
         .bio-text {
             font-size: 1rem;
-            line-height: 1.9;
+            line-height: 2;
             color: #cbd8e3;
             background: rgba(255, 255, 255, 0.03);
             padding: 16px 24px;
@@ -107,17 +107,46 @@
             font-weight: 600;
         }
 
+        /* كبسولات الكوفر (الرد الآلي، تسجيل في استوديو) */
         .bio-text .tag {
             display: inline-block;
             background: rgba(212, 175, 55, 0.12);
-            padding: 2px 16px;
+            padding: 4px 20px;
             border-radius: 40px;
-            margin: 4px 4px;
-            font-size: 0.85rem;
-            border: 1px solid rgba(212, 175, 55, 0.15);
+            margin: 4px 6px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            font-weight: 500;
         }
 
-        /* ===== حاوية الفيديو ===== */
+        .bio-text .tag i {
+            color: #d4af37;
+            margin-left: 6px;
+        }
+
+        /* زر "أطلب الآن" داخل النص */
+        .call-to-action-text {
+            display: inline-block;
+            margin-top: 8px;
+            background: #d4af37;
+            color: #0b1420;
+            padding: 6px 30px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: 0.3s;
+        }
+        .call-to-action-text:hover {
+            transform: scale(1.05);
+            background: #e0c04a;
+        }
+        .call-to-action-text a {
+            color: #0b1420;
+            text-decoration: none;
+        }
+
+        /* ===== حاوية الفيديو (رابط يوتيوب المطلوب) ===== */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -186,7 +215,7 @@
             box-shadow: 0 2px 0 #8f7522;
         }
 
-        /* زر مميز (لـ "أطلب الآن") */
+        /* زر مميز (للطلب الآن) */
         .btn-primary {
             background: #1e3b57;
             color: #d4af37;
@@ -202,7 +231,7 @@
             box-shadow: 0 7px 0 #0f1f2f, 0 14px 30px rgba(30, 59, 87, 0.5);
         }
 
-        /* ===== أيقونات التواصل ===== */
+        /* ===== أيقونات التواصل الاجتماعي (جميع الروابط المطلوبة) ===== */
         .social-row {
             display: flex;
             justify-content: center;
@@ -250,7 +279,7 @@
             margin: 0 4px;
         }
 
-        /* ===== استجابة للجوال ===== */
+        /* ===== استجابة للجوال (متوافق مع الشاشات) ===== */
         @media (max-width: 540px) {
             .card {
                 padding: 28px 16px;
@@ -276,6 +305,10 @@
                 height: 48px;
                 font-size: 1.3rem;
             }
+            .bio-text .tag {
+                font-size: 0.8rem;
+                padding: 3px 12px;
+            }
         }
 
         @media (max-width: 400px) {
@@ -300,64 +333,74 @@
 
         <!-- الشعار / الصورة الشخصية -->
         <div class="logo-wrapper">
-            <img src="https://ui-avatars.com/api/?name=Bilal+Voice+Over&background=d4af37&color=0b1420&size=130&bold=true"
-                 alt="Bilal Voice Over" />
+            <img src="https://ui-avatars.com/api/?name=Bilel+Bouaffar&background=d4af37&color=0b1420&size=130&bold=true"
+                 alt="Bilel Bouaffar" />
         </div>
 
-        <!-- الاسم واللقب -->
+        <!-- الاسم الكامل كما طلبت -->
         <h1>Bilel Bouaffar</h1>
         <p class="subtitle"><i class="fas fa-microphone"></i> Bilal Voice Over | تعليق صوتي احترافي</p>
 
-        <!-- السيرة الذاتية المستوحاة من cover.png -->
+        <!-- ===== السيرة الذاتية المستوحاة من cover.png ===== -->
         <div class="bio-text">
             <span class="highlight">✦</span> تسجيل في استوديو احترافي <span class="highlight">✦</span><br />
-            <span class="tag"><i class="fas fa-phone"></i> الرد الآلي على المكالمات</span>
+            
+            <!-- عبارة "الرد الآلي على المكالمات" كما في الكوفر -->
+            <span class="tag"><i class="fas fa-phone-volume"></i> الرد الآلي على المكالمات</span>
             <span class="tag"><i class="fas fa-headphones"></i> تعليق صوتي</span>
             <span class="tag"><i class="fas fa-video"></i> إعلانات</span>
             <span class="tag"><i class="fas fa-book"></i> كتب صوتية</span>
             <br /><br />
-            <span style="color: #d4af37; font-weight: 500;">
-                <i class="fas fa-arrow-left"></i> أطلب الآن <i class="fas fa-arrow-left"></i>
+            
+            <!-- عبارة "أطلب الآن" مع رابط مباشر (درايف) -->
+            <span class="call-to-action-text">
+                <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank">
+                    <i class="fas fa-arrow-left"></i> أطلب الآن <i class="fas fa-arrow-left"></i>
+                </a>
             </span>
         </div>
 
-        <!-- ===== فيديو يوتيوب في المنتصف ===== -->
+        <!-- ===== فيديو يوتيوب (الرابط: https://www.youtube.com/watch?v=yMzaws-oelE) ===== -->
         <div class="video-wrapper">
             <iframe 
                 src="https://www.youtube.com/embed/yMzaws-oelE?autoplay=0&rel=0&modestbranding=1" 
-                title="تعليق صوتي تعريفي - Bilal Voice Over"
+                title="فيديو تعريفي - Bilel Bouaffar"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <!-- ===== أزرار التنقل ===== -->
+        <!-- ===== أزرار التنقل (جميعها تحتوي على الروابط المطلوبة) ===== -->
         <div class="nav-buttons">
-            <!-- زر "أطلب الآن" -->
+            <!-- زر "أطلب الآن" → رابط الأعمال على درايف -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn btn-primary">
                 <i class="fas fa-headset"></i> أطلب الآن
             </a>
-            <!-- زر "أعمالي" -->
+            <!-- زر "أعمالي" → رابط الأعمال على درايف -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="btn">
                 <i class="fas fa-briefcase"></i> أعمالي
             </a>
-            <!-- زر "تواصل" -->
+            <!-- زر "تواصل" → ينزل لقسم السوشيال ميديا -->
             <a href="#social-section" class="btn">
                 <i class="fas fa-paper-plane"></i> تواصل
             </a>
         </div>
 
-        <!-- ===== روابط التواصل الاجتماعي ===== -->
+        <!-- ===== روابط التواصل الاجتماعي (جميع المنصات المطلوبة) ===== -->
         <div id="social-section" class="social-row">
+            <!-- قناة يوتيوب: youtube.com/@bilalbouaffar92 -->
             <a href="https://www.youtube.com/@bilalbouaffar92" target="_blank" class="social-link" title="يوتيوب">
                 <i class="fab fa-youtube"></i>
             </a>
+            <!-- تيك توك: https://www.tiktok.com/@bilalvoiceover -->
             <a href="https://www.tiktok.com/@bilalvoiceover" target="_blank" class="social-link" title="تيك توك">
                 <i class="fab fa-tiktok"></i>
             </a>
+            <!-- إنستغرام: https://www.instagram.com/bilal_voiceover -->
             <a href="https://www.instagram.com/bilal_voiceover" target="_blank" class="social-link" title="إنستغرام">
                 <i class="fab fa-instagram"></i>
             </a>
+            <!-- أعمالي (درايف): https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8 -->
             <a href="https://drive.google.com/drive/folders/17-Cz_ZW5vtD6XHm-mkPI55bfBio4GdJ8" target="_blank" class="social-link" title="أعمالي">
                 <i class="fas fa-folder-open"></i>
             </a>
